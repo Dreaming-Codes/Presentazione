@@ -1,6 +1,8 @@
 <template>
   <div id="all">
+    <div @click="translatetopleft('logo')">
       <img id="logo" src="@/assets/logo-Castelnuovo.png"/>
+    </div>
     <div id="text">
       <vue-typed-js @onComplete="translate" :strings="['DreamingCodes', 'Lorenzo Rizzotti', 'Castelnuovo']">
         <h1 class="typing"></h1>
@@ -23,6 +25,10 @@ export default {
       document.getElementById("text").addEventListener("animationend", function (){
         document.getElementById("logo").style.display = "block";
       })
+    },
+    translatetopleft: function (elementid) {
+      console.log(elementid)
+      document.getElementById(elementid).classList.add("translatetopleft");
     }
   }
 }
@@ -44,9 +50,12 @@ export default {
 }
 @keyframes logoanim {
   0% {width: 0%}
-  60% {width: 20%}
+  65% {width: 20%}
   80% {width: 10%}
   100% {width: 40%}
+}
+@keyframes translatetopleft {
+  100% {top: 20px; left: 20px;}
 }
 #all {
   background-color: black;
