@@ -1,13 +1,15 @@
 <template>
   <div id="app">
     <Init/>
+    <Presentation/>
   </div>
 </template>
 
 <script>
-import Init from './components/Init.vue'
 import Vue from 'vue'
 import VueNativeSock from 'vue-native-websocket'
+import Presentation from "@/components/Presentation";
+import Init from "@/components/Init";
 
 
 export default {
@@ -19,7 +21,8 @@ export default {
     })
   },
   components: {
-    Init
+    Init,
+    Presentation,
   }
 }
 </script>
